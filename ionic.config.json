@@ -1,0 +1,7 @@
+{
+  "name": "ConsigueTuHora",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -15,6 +15,14 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'crear-cuenta',
+    loadChildren: () => import('./crear-cuenta/crear-cuenta.module').then( m => m.CrearCuentaPageModule)
+  },
+  {
+    path: 'recu-contra',
+    loadChildren: () => import('./recu-contra/recu-contra.module').then( m => m.RecuContraPageModule)
+  },
 ];
 
 @NgModule({

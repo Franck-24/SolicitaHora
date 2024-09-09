@@ -1,0 +1,51 @@
+.pas{
+  bottom: -200px;
+}
+
+.usrt{
+  bottom: -180px;
+}
+
+ion-button {
+  --background: #53baf6;
+  --background-hover: #6ce5ec;
+  --background-activated: #6ce5ec;
+  --background-focused: #6ce5ec;
+
+  --color: rgb(255, 255, 255);
+
+  --border-radius: 0;
+  --border-color: #338df5;
+  --border-style: solid;
+  --border-width: 1px;
+
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+
+  --ripple-color: deeppink;
+
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  
+}
+
+.ini{
+  position: relative;
+  bottom: -120px;
+  left: 65px;
+}
+.cra{
+  position: relative;
+  bottom: -290px;
+  left: 20px;
+}
+
+.car{
+  position: relative;
+  bottom: -25px;
+  right:150px;
+}
+
+.olc{
+  position:relative;
+  left: -40px;
+}

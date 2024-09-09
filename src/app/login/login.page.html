@@ -4,31 +4,34 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true" >
-  
+  <form [FormGroup] ="loginForm" (ngSubmit)="onSubmit()">
   <div id="container">
-    <ion-item class="usrt">
-      <ion-input label="Correo electrónico" type="email" label-placement="floating"></ion-input>
+    <ion-item>
+      <ion-input formControlName="correo" label="Correo electrónico" type="email" label-placement="floating" required></ion-input>
     </ion-item>
 
     <ion-item class="pas">
-      <ion-input label="Contraseña" type="password" label-placement="floating" value="">
+      <ion-input formControlName="password" label="Contraseña" type="password" label-placement="floating" required>
       <ion-input-password-toggle slot="end"></ion-input-password-toggle> 
       </ion-input>
     </ion-item>
+    </div>
 
     <div id="container-check">
       <ion-checkbox labelPlacement="end" line="none">Recordar correo electrónico</ion-checkbox>
     </div>
 
     <div id="container-button">
-      <ion-button expand="block" href="#">Iniciar Sesión</ion-button>
+      <ion-button expand="block" id="iniciar">Iniciar Sesión</ion-button>
     </div>
-  </div>
+  </form>
 
   <div id="enlaces">
     <p>Si no eres usuario, <a href="crear-cuenta">regístrate</a></p>
     <p><a href="recu-contra">Olvide mi contraseña</a></p>
   </div>
+  
   
 </ion-content>

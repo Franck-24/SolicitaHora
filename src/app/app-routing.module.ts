@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'recu-contra',
     loadChildren: () => import('./recu-contra/recu-contra.module').then( m => m.RecuContraPageModule)
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MEnuPageModule)
+  },
 ];
 
 @NgModule({

@@ -6,26 +6,50 @@
   bottom: -180px;
 }
 
-ion-button {
-  --background: #53baf6;
-  --background-hover: #6ce5ec;
-  --background-activated: #6ce5ec;
-  --background-focused: #6ce5ec;
+ion-button{
+  --background: #2082c3;
+}
 
-  --color: rgb(255, 255, 255);
+ion-toolbar{
+  --background: #2082c3;
+  --color:#ffff;
+}
 
-  --border-radius: 0;
-  --border-color: #338df5;
-  --border-style: solid;
-  --border-width: 1px;
 
-  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+#container {
+  text-align: center;
+  position: absolute;
+  left: 15px;
+  right: 35px;
+  transform: translateY(-50%);
+}
 
-  --ripple-color: deeppink;
+#container-button {
+  text-align: center;
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 400px;
+}
 
-  --padding-top: 10px;
-  --padding-bottom: 10px;
-  
+#container-check {
+  size: 2px;
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 350px;
+}
+
+#enlaces{
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80%;
+}
+
+#enlaces a{
+  text-decoration: none;
 }
 
 .ini{

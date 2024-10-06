@@ -1,39 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Inicio Sesión</ion-title>
+    <ion-title>Inicia sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true" >
-  <ion-header collapse="condense" color="ligth">
-    <ion-toolbar>
-      <ion-title size="large">
-        Inicio Sesion
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form [FormGroup] ="loginForm" (ngSubmit)="onSubmit()">
+  <div id="container">
+    <ion-item>
+      <ion-input formControlName="correo" label="Correo electrónico" type="email" label-placement="floating" required></ion-input>
+    </ion-item>
 
+    <ion-item class="pas">
+      <ion-input formControlName="password" label="Contraseña" type="password" label-placement="floating" required>
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle> 
+      </ion-input>
+    </ion-item>
+    </div>
 
- 
-  <ion-item class="usrt">
-    <ion-input label="Usuario" type="email" placeholder="usuario@gmail.com"></ion-input>
-  </ion-item>
-  
- 
-  <ion-input type="password" label="Password" value="NeverGonnaGiveYouUp" class="pas">
-    <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-  </ion-input>
-
-  <div class="ini">
-    <ion-button class="ini" href="menu">Iniciar Sesion</ion-button>
-  </div>
-<div class="cra">
-  <label for="">No tienes una cuenta?</label>
-  <a class="car" href="crear-cuenta">Crear Cuenta</a>
-  <a class="olc" href="recu-contra">Olvide mi contraseña</a>
-</div>
-
-
+    <div id="container-check">
+      <ion-checkbox labelPlacement="end" line="none">Recordar correo electrónico</ion-checkbox>
+    </div>
 
   
 </ion-content>

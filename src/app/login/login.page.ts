@@ -1,11 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
-
-type loginForm ={
-  correo: FormControl<string>,
-  password: FormControl<string>
-};
-
 
 @Component({
   selector: 'app-login',

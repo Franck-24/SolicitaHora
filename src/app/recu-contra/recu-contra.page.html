@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>RecuContra</ion-title>
+    <ion-title>Recuperar contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,37 @@
       <ion-title size="large">RecuContra</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Recuperar contraseña</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-input label="Usuario" type="email" placeholder="usuario@gmail.com"></ion-input>
+
+    <ion-button id="" href="login">Solicitar recuperacion de contraseña</ion-button>
+    <ion-button id="open-modal" expand="block" >Que puedo hacer?</ion-button>
+    
+    
+    <ion-modal
+      trigger="open-modal"
+      [initialBreakpoint]="0.25"
+      [breakpoints]="[0, 0.25, 0.5, 0.75]"
+      handleBehavior="cycle"
+    >
+      <ng-template>
+        <ion-content class="ion-padding">
+          <div class="ion-margin-top">
+            <ion-label>Recuerde guardar o anotar la contraseña en un lugar que pueda recordar, evite darle su contraseña a terceras personas.</ion-label>
+          
+            <ion-label>El link para recuperar contraseña sera enviado a su correo electronico.</ion-label>
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
+
+
+
 </ion-content>

@@ -5,33 +5,28 @@
 </ion-header>
 
 
-<ion-content [fullscreen]="true" >
-  <form [FormGroup] ="loginForm" (ngSubmit)="onSubmit()">
-  <div id="container">
+<ion-content padding>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <ion-item>
-      <ion-input formControlName="correo" label="Correo electrónico" type="email" label-placement="floating" required></ion-input>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" required [(ngModel)]="email" name="email"></ion-input>
     </ion-item>
 
-    <ion-item class="pas">
-      <ion-input formControlName="password" label="Contraseña" type="password" label-placement="floating" required>
-      <ion-input-password-toggle slot="end"></ion-input-password-toggle> 
-      </ion-input>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" required [(ngModel)]="password" name="password"></ion-input>
     </ion-item>
-    </div>
+    
+    <ion-button expand="full" type="submit" [disabled]="!loginForm.form.valid">Iniciar Sesión</ion-button>
+    </form>
 
-    <div id="container-check">
-      <ion-checkbox labelPlacement="end" line="none">Recordar correo electrónico</ion-checkbox>
+    <div *ngIf="errorMessage" style="color: red;">
+    {{errorMessage}}
     </div>
-
-    <div id="container-button">
-      <ion-button expand="block" id="iniciar">Iniciar Sesión</ion-button>
-    </div>
-  </form>
 
   <div id="enlaces">
     <p>Si no eres usuario, <a href="crear-cuenta">regístrate</a></p>
     <p><a href="recu-contra">Olvide mi contraseña</a></p>
   </div>
-  
   
 </ion-content>

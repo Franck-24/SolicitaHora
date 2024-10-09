@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
-
-type loginForm ={
-  correo: FormControl<string>,
-  password: FormControl<string>
-};
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -12,30 +7,21 @@ type loginForm ={
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
-  loginForm!: FormGroup<loginForm>;
-  
+export class LoginPage {
+  email: string='';
+  password: string='';
+  errorMessage: string='';
 
-  constructor(private readonly formBuilder: NonNullableFormBuilder) {}
-
-  ngOnInit(): void{
-
-    this.loginForm = new FormGroup<loginForm>({
-      correo: new FormControl('', {nonNullable: true}),
-      password: new FormControl('',{nonNullable:true})
-    });
-
-    this.loginForm = this.formBuilder.group({
-      correo:'',
-      password:''
-    })
-  }
+  constructor(private navCtrl: NavController) {}
 
   onSubmit() {
-    if(this.loginForm.valid){
-      console.log(this.loginForm.value);
+    //validacion simple, se puede reemplazar con tu logica de autenticcion
+    if (this.email === 'DuocUC@gmail.com' && this.password === 'Contraseña'){
+    //Redirige a otra página después del inicio de sesion
+    this.navCtrl.navigateForward('./home');
+    } else {
+      this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.';
     }
-  }
-  
+  } 
 }
 

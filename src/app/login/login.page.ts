@@ -16,7 +16,13 @@ export class LoginPage {
 
   onSubmit() {
     //validacion simple, se puede reemplazar con tu logica de autenticcion
-    if (this.email === 'DuocUC@gmail.com' && this.password === 'Contraseña'){
+    if (this.email.trim() !== ''  && this.password.trim() !== ' '){
+    
+      var usuario = {
+        email: this.email,
+        password: this.password
+      }
+      localStorage.setItem('usuario',JSON.stringify(usuario));
     //Redirige a otra página después del inicio de sesion
     this.navCtrl.navigateForward('./home');
     } else {

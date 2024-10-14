@@ -1,34 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
-  loginForm!: FormGroup<loginForm>;
-  
+export class LoginPage {
+  email: string='';
+  password: string='';
+  errorMessage: string='';
 
-  constructor(private readonly formBuilder: NonNullableFormBuilder) {}
-
-  ngOnInit(): void{
-
-    this.loginForm = new FormGroup<loginForm>({
-      correo: new FormControl('', {nonNullable: true}),
-      password: new FormControl('',{nonNullable:true})
-    });
-
-    this.loginForm = this.formBuilder.group({
-      correo:'',
-      password:''
-    })
-  }
+  constructor(private navCtrl: NavController) {}
 
   onSubmit() {
-    if(this.loginForm.valid){
-      console.log(this.loginForm.value);
-    }
-  }
-  
+    //validacion simple, se puede reemplazar con tu logica de autenticcion
+    if (this.email.trim() !== 'prueba@gmail.com'  && this.password.trim() !== 'Cuenta.2024'){
+    
+      var usuario = {
+        email: this.email,
+        password: this.password
+      }
+      localStorage.setItem('usuario',JSON.stringify(usuario));
+    //Redirige a otra página después del inicio de sesion
+    this.navCtrl.navigateForward('./home');
+    } else {
+      this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.';
+    }
+  } 
 }
-

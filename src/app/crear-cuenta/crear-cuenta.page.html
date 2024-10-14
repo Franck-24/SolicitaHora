@@ -12,40 +12,29 @@
   </ion-header>
   <h2 class="RH">Crear Cuenta</h2>
   <div>
+   <form [formGroup]="formularioRegistro" (ngSubmit="guardar()")>
+
     <ion-list>
       <label for="">Ingrese su nombre</label>
-      <ion-input type="text" placeholder="Ejemplo : cris.." class="inno"></ion-input>
+      <ion-input type="text" placeholder="Ejemplo : cris.." class="inno" formControlName="nombre"></ion-input>
       
       <label for="">Ingrese su Apellido</label>
-      <ion-input type="text" placeholder="Ejemplo : rona.."></ion-input>
+      <ion-input type="text" placeholder="Ejemplo : rona.." formControlName="apellido"></ion-input>
      
       <label for="">Numero Telefonico</label>
-      <ion-input type="number" placeholder="Ejemplo : 596.."></ion-input>
-     
-      <label for="">Fecha de nacimiento</label>
-      <ion-datetime-button datetime="datetime"></ion-datetime-button>
-      <ion-modal [keepContentsMounted]="true">
-      <ng-template>
-      <ion-datetime id="datetime"></ion-datetime>
-      </ng-template>
-      </ion-modal>
+      <ion-input type="number" placeholder="Ejemplo : 596.." formControlName="numero"></ion-input>
+    
       <ion-item>
-        <ion-input labelPlacement="floating"  placeholder="alumno@duoc.cl">
+        <ion-input labelPlacement="floating"  placeholder="alumno@duoc.cl" formControlName="email">
           <div slot="label" >Ingrese su correo<ion-text color="danger">(Obligatorio)</ion-text></div>
         </ion-input>
       </ion-item>
     </ion-list>
     
     <label for="">Ingrese su contraseña</label>
-    <ion-input type="password" value="NeverGonnaGiveYouUp">
+    <ion-input type="password" value="NeverGonnaGiveYouUp" formControlName="password">
       <ion-input-password-toggle slot="end"></ion-input-password-toggle>
     </ion-input>
-    
-    <label for="">Confirme su contraseña</label>
-    <ion-input type="password"  value="NeverGonnaGiveYouUp">
-      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-    </ion-input>
-  </div>
-
   <ion-button class="enfor" href="login">Crear Cuenta</ion-button>
+   </form>
 </ion-content>

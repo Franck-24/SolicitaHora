@@ -26,7 +26,23 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MEnuPageModule)
+  },  {
+    path: 'modificar-usuario',
+    loadChildren: () => import('./modificar-usuario/modificar-usuario.module').then( m => m.ModificarUsuarioPageModule)
   },
+  {
+    path: 'eliminar-usuario',
+    loadChildren: () => import('./eliminar-usuario/eliminar-usuario.module').then( m => m.EliminarUsuarioPageModule)
+  },
+  {
+    path: 'actualiar-usuario',
+    loadChildren: () => import('./actualiar-usuario/actualiar-usuario.module').then( m => m.ActualiarUsuarioPageModule)
+  },
+  {
+    path: 'crud',
+    loadChildren: () => import('./crud/crud.module').then( m => m.CrudPageModule)
+  },
+
 ];
 
 @NgModule({
